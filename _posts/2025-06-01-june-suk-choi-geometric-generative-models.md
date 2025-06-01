@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "An Overview of Geometric Generative Models"
+title: "AI810 Blog Post (20247059): An Overview of Geometric Generative Models"
 author: "June Suk Choi"
 date: 2025-06-01 09:00:00 +0000
 categories: 
@@ -432,7 +432,7 @@ Instead of directly defining a path between a sampled $$x_0 \sim p_0$$ and $$x_1
 3.  Once $$g^*$$ is found, define the conditional path (e.g., linear interpolation) between $$x_0$$ and the *aligned data sample* $$\tilde{x}_1 = \rho(g^*)x_1$$:
 
     $$x_t(x_0, \tilde{x}_1) = (1-t)x_0 + t\tilde{x}_1.$$
-    
+
 4.  The target conditional velocity is then $$u_t(x_t\|x_0, \tilde{x}_1) = \tilde{x}_1 - x_0$$.
 5.  The Conditional Flow Matching loss is computed using these equivariantly constructed pairs:
 
