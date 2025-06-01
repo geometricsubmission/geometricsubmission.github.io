@@ -514,7 +514,7 @@ While score-based diffusion models arrive at a deterministic generative ODE in t
 This shared deterministic foundation underscores a deep theoretical connection between these powerful generative modeling paradigms.
 
 
-## Conclusion & Outlook
+## 7. Conclusion
 
 Based on the overview of flow matching we have followed through, we can say that generative modeling is no longer confined to the flat, grid-like structures of Euclidean space. 
 We've seen how the foundational principles of Flow Matching—learning deterministic transformations via ODEs—can be adapted to far more complex data domains.
