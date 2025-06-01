@@ -98,10 +98,6 @@ We will only ask the authors to report if they have a conflict of interest. If s
 
 
 
-## Publication 
-
-The posts will be created and published under a unified template; see [the submission instructions]({{ '/submitting' | relative_url }}) and the [sample post]({% post_url 2025-04-28-distill-example %}) hosted on the blog of this website.
-
 #### Poster
 
 Additionally, accepted posts will have the option to present their work as a poster during the main poster session. For more information about the main poster session (time, poster format, etc.) please refer to the ICLR homepage.
