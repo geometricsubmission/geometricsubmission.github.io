@@ -259,7 +259,7 @@ $$u_t^j(x_1^j, x_0^j \| x_0, x_1) = \frac{\dot{\kappa}_t}{1-\kappa_t}.$$
 All other rates from $$x_0^j$$ are zero (i.e., $$u_t^j(y^j, x_0^j \| \ldots) = 0$$ for $$y^j \neq x_1^j, x_0^j$$). 
 The rate of "staying" at $$x_0^j$$ is: 
 
-$$u_t^j(x_0^j, x_0^j \| \ldots) = -\frac{\dot{\kappa}_t}{1-\kappa_t}$$.
+$$u_t^j(x_0^j, x_0^j \| \ldots) = -\frac{\dot{\kappa}_t}{1-\kappa_t}.$$
 
 If the $$j$$-th coordinate $$X_t^j$$ has already reached $$x_1^j$$ (or if $$x_0^j = x_1^j$$ to begin with), it stays there; all rates to transition out of $$x_1^j$$ are zero. This defines an "absorbing target" path for each coordinate.
 The neural network's per-coordinate output $$u_\theta^j(y^j, x_t, t)$$ is then trained to match this simple and sparse target rate vector.
@@ -429,8 +429,10 @@ Instead of directly defining a path between a sampled $$x_0 \sim p_0$$ and $$x_1
     *   For **rotational alignment** (e.g., aligning two point clouds or molecular structures, where $$G = \text{SO}(3)$$), this can be solved using the **Kabsch algorithm**.
     *   For **permutational alignment** (e.g., matching sets of identical atoms where $$G = S_N$$), if we are matching two sets of points, this again becomes an assignment problem solvable by algorithms like the Hungarian algorithm (often by finding the permutation that minimizes the sum of distances between corresponding points after a potential global alignment).
 
-3.  Once $$g^*$$ is found, define the conditional path (e.g., linear interpolation) between $$x_0$$ and the *aligned data sample* $$\tilde{x}_1 = \rho(g^*)x_1$$.
-    $$x_t(x_0, \tilde{x}_1) = (1-t)x_0 + t\tilde{x}_1$$
+3.  Once $$g^*$$ is found, define the conditional path (e.g., linear interpolation) between $$x_0$$ and the *aligned data sample* $$\tilde{x}_1 = \rho(g^*)x_1$$:
+
+    $$x_t(x_0, \tilde{x}_1) = (1-t)x_0 + t\tilde{x}_1.$$
+    
 4.  The target conditional velocity is then $$u_t(x_t\|x_0, \tilde{x}_1) = \tilde{x}_1 - x_0$$.
 5.  The Conditional Flow Matching loss is computed using these equivariantly constructed pairs:
 
